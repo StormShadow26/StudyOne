@@ -6,7 +6,7 @@ const {uploadImageToCloudinary} = require("../utils/imageUploader");
 exports.createSubSection = async (req, res) => {
   try {
     const { sectionId, title, timeDuration, description } = req.body;
-    const video = req.files.videoFile;
+    const video = req.files.video;
 
     if (!sectionId || !title || !timeDuration || !description) {
       return res.status(400).json({

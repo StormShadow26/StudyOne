@@ -34,7 +34,7 @@ app.use(
     tempFileDir: "/tmp",
   })
 );
-//cloudinary connection
+//cloudinary connections
 cloudinaryConnect();
 
 //routes

@@ -43,7 +43,7 @@ exports.courseEnrollmentEmail = (courseName, name) => {
             .cta {
                 display: inline-block;
                 padding: 10px 20px;
-                background-color: #FFD60A;
+                background-color:rgb(59, 255, 10);
                 color: #000000;
                 text-decoration: none;
                 border-radius: 5px;
@@ -67,7 +67,7 @@ exports.courseEnrollmentEmail = (courseName, name) => {
     
     <body>
         <div class="container">
-            <a href="https://studynotion-edtech-project.vercel.app"><img class="logo" src="https://i.ibb.co/7Xyj3PC/logo.png"
+            <a href="https://studynotion-edtech-project.vercel.app"><img class="logo" src="https://asset.cloudinary.com/dcyjexcuf/85ae70a8bd121c60c2508c7a681155bc"
                     alt="StudyNotion Logo"></a>
             <div class="message">Course Registration Confirmation</div>
             <div class="body">

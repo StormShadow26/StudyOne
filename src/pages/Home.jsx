@@ -3,7 +3,7 @@ import { FaArrowRight } from "react-icons/fa"
 import { Link } from "react-router-dom"
 
 // Image and Video Import
-import Banner from "../assets/Images/banner.mp4"
+import Banner from "../assets/Images/Didi.mp4"
 // Component Imports
 import Footer from "../components/common/Footer"
 import ReviewSlider from "../components/common/ReviewSlider"
@@ -158,7 +158,7 @@ function Home() {
             </div>
             <div className="flex flex-col items-start gap-10 lg:w-[40%]">
               <div className="text-[16px]">
-                The modern StudyNotion is the dictates its own terms. Today, to
+                The modern StudyOne is the dictates its own terms. Today, to
                 be a competitive specialist requires more than professional
                 skills.
               </div>

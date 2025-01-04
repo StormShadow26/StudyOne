@@ -66,7 +66,7 @@ function App() {
           path="forgot-password"
           element={
             <OpenRoute>
-              <ForgotPassword />
+              {/* <ForgotPassword /> */} <Error></Error>
             </OpenRoute>
           }
         />  

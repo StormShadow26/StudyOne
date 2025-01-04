@@ -22,7 +22,7 @@ exports.auth = async (req, res, next) => {
 
           //verify the token
           try {
-               console.log("aagy");
+          
                const decode = jwt.verify(token, process.env.JWT_SECRET,{ clockTolerance: 5 });
                console.log(decode);
                req.user = decode;
@@ -31,7 +31,7 @@ exports.auth = async (req, res, next) => {
                //verfication-issue
                return res.status(401).json({
                     success: false,
-                    message: error.message,
+                    message:error.message,
                });
 
           }

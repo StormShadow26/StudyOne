@@ -23,16 +23,17 @@ function ReviewSlider() {
 
   useEffect(() => {
     (async () => {
-      const { data } = await apiConnector(
+      const { allReviews } = await apiConnector(
         "GET",
         ratingsEndpoints.REVIEWS_DETAILS_API
       );
-      if (data?.success) {
-        setReviews(data?.data);
+      if (allReviews?.success) {
+        setReviews(allReviews?.data); 
       }
     })();
   }, []);
 
+  // console.log("Reviews i got", reviews);
   return (
     <div className="text-white">
       <div className="my-[50px] h-[184px] max-w-maxContentTab lg:max-w-maxContent">

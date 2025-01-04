@@ -35,7 +35,7 @@ exports.capturePayment = async (req, res) => {
 
       // Check if the user is already enrolled in the course
       const uid = new mongoose.Types.ObjectId(userId)
-      if (course.studentsEnroled.includes(uid)) {
+      if (course.studentsEnrolled.includes(uid)) {
         return res
           .status(200)
           .json({ success: false, message: "Student is already Enrolled" })
@@ -57,17 +57,22 @@ exports.capturePayment = async (req, res) => {
 
   try {
     // Initiate the payment using Razorpay
-    const paymentResponse = await instance.orders.create(options)
-    console.log(paymentResponse)
-    res.json({
+    
+    const paymentResponse = await instance.orders.create(options);
+    console.log(paymentResponse);
+    return res.status(200).json({
       success: true,
       data: paymentResponse,
     })
+
   } catch (error) {
-    console.log(error)
-    res
-      .status(500)
-      .json({ success: false, message: "Could not initiate order." })
+    
+      return res.status(500).json(
+      { 
+        success: false,
+        message: "mere me prblm h"
+      }
+    )
   }
 }
 
@@ -109,7 +114,7 @@ exports.verifyPayment = async (req, res) => {
 exports.sendPaymentSuccessEmail = async (req, res) => {
   const { orderId, paymentId, amount } = req.body
 
-  const userId = req.user.id
+  const userId = req.user.id;
 
   if (!orderId || !paymentId || !amount || !userId) {
     return res
@@ -151,7 +156,7 @@ const enrollStudents = async (courses, userId, res) => {
       // Find the course and enroll the student in it
       const enrolledCourse = await Course.findOneAndUpdate(
         { _id: courseId },
-        { $push: { studentsEnroled: userId } },
+        { $push: { studentsEnrolled: userId } },
         { new: true }
       )
 

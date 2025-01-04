@@ -56,16 +56,17 @@ const Catalog = () => {
       if (!loading && !catalogPageData.success) {
         return <Error />
       }
-    
+      
+      console.log("Just:", catalogPageData);
       return (
         <>
           {/* Hero Section */}
           <div className=" box-content bg-richblack-800 px-4">
-            <div className="mx-auto flex min-h-[260px] max-w-maxContentTab flex-col justify-center gap-4 lg:max-w-maxContent ">
+            <div className="mx-auto flex min-h-[60px] max-w-maxContentTab flex-col justify-center items-start  lg:max-w-maxContent ">
               <p className="text-sm text-richblack-300">
                 {`Home / Catalog / `}
                 <span className="text-yellow-25">
-                  {catalogPageData?.data?.selectedCategory?.name}
+                  {catalogPageData.data.selectedCategory[0]?.name}
                 </span>
               </p>
               <p className="text-3xl text-richblack-5">
@@ -104,7 +105,7 @@ const Catalog = () => {
             </div>
             <div>
               <CourseSlider
-                Courses={catalogPageData?.data?.selectedCategory?.courses}
+                Courses={catalogPageData?.data?.selectedCategory[0]?.course}
               />
             </div>
           </div>
@@ -115,7 +116,7 @@ const Catalog = () => {
             </div>
             <div className="py-8">
               <CourseSlider
-                Courses={catalogPageData?.data?.differentCategory?.courses}
+                Courses={catalogPageData?.data?.differentCategory?.course}
               />
             </div>
           </div>
@@ -128,7 +129,7 @@ const Catalog = () => {
                 {catalogPageData?.data?.mostSellingCourses
                   ?.slice(0, 4)
                   .map((course, i) => (
-                    <Course_Card course={course} key={i} Height={"h-[400px]"} />
+                    <Course_Card course={course} key={i} Height={"h-[300px]"} />
                   ))}
               </div>
             </div>

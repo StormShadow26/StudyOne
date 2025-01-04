@@ -9,6 +9,7 @@ import { Autoplay,FreeMode,Navigation, Pagination}  from 'swiper/modules'
 import Course_Card from './Course_Card'
 
 const CourseSlider = ({Courses}) => {
+  console.log("Coruses: ", Courses)
   return (
     <>
       {Courses?.length ? (
@@ -25,6 +26,7 @@ const CourseSlider = ({Courses}) => {
           className="max-h-[30rem]"
         >
           {Courses?.map((course, i) => (
+            console.log("Course: ", course),
             <SwiperSlide key={i}>
               <Course_Card course={course} Height={"h-[250px]"} />
             </SwiperSlide>

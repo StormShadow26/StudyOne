@@ -61,14 +61,16 @@ exports.categoryPageDetails = async (req, res) => {
   try {
     const { categoryId } = req.body;
 
-    const selectedCategory = await Category.findById(categoryId)
+    
+    const selectedCategory = await Category.find({ _id: categoryId })
       .populate({
-        path: "courses",
+        path: "course",
         match: { status: "Published" },
         populate: "ratingAndReviews",
       })
       .exec();
 
+    
     if (!selectedCategory) {
       return res.status(404).json({
         success: false,
@@ -76,21 +78,22 @@ exports.categoryPageDetails = async (req, res) => {
       });
     }
 
-    if (selectedCategory.courses.length === 0) {
-      return res.status(404).json({
-        success: false,
-        message: "No courses found for the selected category.",
-      });
-    }
+    // if (selectedCategory.course.length === 0) {
+    //   return res.status(404).json({
+    //     success: false,
+    //     message: "No courses found for the selected category.",
+    //   });
+    // }
 
+   
     const differentCategories = await Category.find({
       _id: { $ne: categoryId },
     })
-      .populate("courses")
+      .populate("course")
       .exec();
-
-    const differentCategory =
-      differentCategories[getRandomInt(differentCategories.length)];
+    
+   
+    const differentCategory = differentCategories[getRandomInt(differentCategories.length)];
 
     const allCourses = await Course.find({ status: "Published" }).exec();
     const mostSellingCourses = allCourses
@@ -108,7 +111,7 @@ exports.categoryPageDetails = async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       success: false,
-      message: "There is an error in finding Category Page details.",
+      message: error.message,
     });
   }
 };

@@ -1,3 +1,5 @@
+{/*Line 48 changed */}
+
 exports.paymentSuccessEmail = (name, amount, orderId, paymentId) => {
     return `<!DOCTYPE html>
       <html>
@@ -43,7 +45,7 @@ exports.paymentSuccessEmail = (name, amount, orderId, paymentId) => {
               .cta {
                   display: inline-block;
                   padding: 10px 20px;
-                  background-color: #FFD60A;
+                  background-color:#32CD32;   
                   color: #000000;
                   text-decoration: none;
                   border-radius: 5px;

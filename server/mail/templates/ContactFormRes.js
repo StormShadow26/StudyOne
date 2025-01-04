@@ -50,7 +50,7 @@ exports.contactUsEmail = (
             .cta {
                 display: inline-block;
                 padding: 10px 20px;
-                background-color: #FFD60A;
+                background-color:rgb(47, 255, 10);
                 color: #000000;
                 text-decoration: none;
                 border-radius: 5px;
@@ -75,7 +75,7 @@ exports.contactUsEmail = (
     <body>
         <div class="container">
             <a href="https://studynotion-edtech-project.vercel.app"><img class="logo"
-                    src="https://i.ibb.co/7Xyj3PC/logo.png" alt="StudyNotion Logo"></a>
+                    src="https://i.ibb.co/7Xyj3PC/logo.png" alt="StudyOne Logo"></a>
             <div class="message">Contact Form Confirmation</div>
             <div class="body">
                 <p>Dear ${firstname} ${lastname},</p>
@@ -89,7 +89,7 @@ exports.contactUsEmail = (
                 <p>We appreciate your interest and will get back to you shortly. </p>
             </div>
             <div class="support">If you have any further questions or need immediate assistance, please feel free to reach
-                out to us at <a href="mailto:info@studynotion.com">info@studynotion.com</a>. We are here to help!</div>
+                out to us at <a href="mailto:info@studynotion.com">info@studyone.com</a>. We are here to help!</div>
         </div>
     </body>
     

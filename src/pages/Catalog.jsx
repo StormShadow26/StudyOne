@@ -11,11 +11,11 @@ import Error from "./Error"
 
 const Catalog = () => {
 
-    const { loading } = useSelector((state) => state.profile)
+  const { loading } = useSelector((state) => state.profile)
   const { catalogName } = useParams()
   const [active, setActive] = useState(1)
-    const [catalogPageData, setCatalogPageData] = useState(null);
-    const [categoryId, setCategoryId] = useState("");
+  const [catalogPageData, setCatalogPageData] = useState(null);
+  const [categoryId, setCategoryId] = useState("");
 
     //Fetch all categories
     useEffect(()=> {
